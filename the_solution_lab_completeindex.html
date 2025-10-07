@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Solution Lab — Creative Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --brand-red: #e11d48;
+      --brand-dark: #0f172a;
+    }
+    .brand-red { background-color: var(--brand-red); }
+    .brand-red-text { color: var(--brand-red); }
+    .card-glass { background-color: rgba(255,255,255,0.85); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Header -->
+  <header class="fixed w-full z-30 bg-white/90 backdrop-blur-sm shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center brand-red text-white font-bold">TS</div>
+        <span class="font-semibold text-lg">The Solution Lab</span>
+      </a>
+      <nav class="hidden md:flex gap-6">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#products" class="hover:underline">Products</a>
+        <a href="#gallery" class="hover:underline">Gallery</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden flex items-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden bg-white w-full">
+      <a href="#home" class="block px-6 py-2 border-b">Home</a>
+      <a href="#about" class="block px-6 py-2 border-b">About</a>
+      <a href="#services" class="block px-6 py-2 border-b">Services</a>
+      <a href="#products" class="block px-6 py-2 border-b">Products</a>
+      <a href="#gallery" class="block px-6 py-2 border-b">Gallery</a>
+      <a href="#contact" class="block px-6 py-2">Contact</a>
+    </nav>
+  </header>
+
+  <main class="pt-24">
+
+    <!-- Hero -->
+    <section id="home" class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-1/2">
+        <h1 class="text-5xl font-extrabold leading-tight">Professional Creative & Digital Solutions</h1>
+        <p class="mt-4 text-lg text-slate-600">Building bold brands and beautiful digital experiences that convert.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="#contact" class="px-6 py-3 rounded-lg brand-red text-white font-semibold">Request Quote</a>
+          <a href="#products" class="px-6 py-3 rounded-lg border border-slate-200">Explore Products</a>
+        </div>
+      </div>
+      <div class="lg:w-1/2">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600" alt="Hero" class="rounded-xl shadow-lg w-full h-80 object-cover">
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold">About Us</h2>
+      <p class="mt-4 text-slate-600">We are a creative studio delivering professional solutions in branding, web design, and digital marketing. Our team ensures your projects convert visitors into loyal customers.</p>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="bg-slate-50 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold">Services</h2>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 card-glass rounded-lg shadow">
+            <h3 class="text-xl font-semibold brand-red-text">Branding</h3>
+            <p class="mt-2 text-slate-600">Logo, identity, and visual branding solutions.</p>
+          </div>
+          <div class="p-6 card-glass rounded-lg shadow">
+            <h3 class="text-xl font-semibold brand-red-text">Web Design</h3>
+            <p class="mt-2 text-slate-600">Responsive and high-converting websites.</p>
+          </div>
+          <div class="p-6 card-glass rounded-lg shadow">
+            <h3 class="text-xl font-semibold brand-red-text">Digital Marketing</h3>
+            <p class="mt-2 text-slate-600">SEO, social campaigns, and lead generation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products with search -->
+    <section id="products" class="max-w-7xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold">Products</h2>
+      <p class="mt-2 text-slate-600">Explore our featured products below.</p>
+      <input type="text" id="product-search" placeholder="Search Products..." class="mt-4 px-4 py-2 border rounded w-full" />
+      <div id="product-grid" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Product items -->
+        <div class="p-4 card-glass rounded-lg shadow product-item" data-title="Product 1">
+          <img src="https://via.placeholder.com/300" alt="Product 1" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-2 font-semibold">Product 1</h3>
+          <p class="text-sm text-slate-600">Code: P001 | High-quality lab equipment.</p>
+        </div>
+        <div class="p-4 card-glass rounded-lg shadow product-item" data-title="Product 2">
+          <img src="https://via.placeholder.com/300" alt="Product 2" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-2 font-semibold">Product 2</h3>
+          <p class="text-sm text-slate-600">Code: P002 | Reliable research chemicals.</p>
+        </div>
+        <div class="p-4 card-glass rounded-lg shadow product-item" data-title="Product 3">
+          <img src="https://via.placeholder.com/300" alt="Product 3" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-2 font-semibold">Product 3</h3>
+          <p class="text-sm text-slate-600">Code: P003 | Laboratory consumables.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="max-w-7xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold">Gallery</h2>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <img src="https://via.placeholder.com/200" class="w-full h-40 object-cover rounded" alt="Gallery1">
+        <img src="https://via.placeholder.com/200" class="w-full h-40 object-cover rounded" alt="Gallery2">
+        <img src="https://via.placeholder.com/200" class="w-full h-40 object-cover rounded" alt="Gallery3">
+        <img src="https://via.placeholder.com/200" class="w-full h-40 object-cover rounded" alt="Gallery4">
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-white py-16 border-t">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold">Contact Us</h2>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="mt-6 grid gap-4">
+          <input type="text" name="name" placeholder="Your Name" required class="px-4 py-2 border rounded w-full">
+          <input type="email" name="email" placeholder="Your Email" required class="px-4 py-2 border rounded w-full">
+          <textarea name="message" placeholder="Your Message" required class="px-4 py-2 border rounded w-full h-32"></textarea>
+          <button type="submit" class="px-6 py-3 rounded-lg brand-red text-white font-semibold">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 text-white py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+      <p>© 2025 The Solution Lab. All rights reserved.</p>
+      <div class="flex gap-4 mt-2 sm:mt-0">
+        <a href="#" class="hover:underline">Facebook</a>
+        <a href="#" class="hover:underline">LinkedIn</a>
+        <a href="#" class="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Products search filter
+    const searchInput = document.getElementById('product-search');
+    const productItems = document.querySelectorAll('.product-item');
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      productItems.forEach(item => {
+        const title = item.dataset.title.toLowerCase();
+        if(title.includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
